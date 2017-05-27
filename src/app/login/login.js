@@ -1,13 +1,14 @@
-angular.module('todoList').
-controller('login-controller', function($scope, $http, $auth){
+angular.module('todoList').controller(
+  'adminLoginCtrl', function($scope, $http, $auth, $location){
     $scope.authenticationProcess = function(){
       $auth.submitLogin($scope.loginForm)
       .then(function(user){
-        console.log("hello");
-        console.log(user);
+        // console.log(user)
+        console.log("Sign in successfully.")
+        $location.path('/todolists').replace();
       }).catch(function(error){
-        console.log("Morning");
         console.log(error)
+        console.log("failed to get data!!!")
       });
     }
   }

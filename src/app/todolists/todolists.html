@@ -1,0 +1,15 @@
+<div ng-controller="signoutCtrl">
+  <button ng-click="handleLogoutBtnClick()">Sign Out</button>
+</div>
+
+<div ng-controller='todolistsCtrl'>
+  <h1>TodoLists</h1>
+  <ul ng-repeat = "list in todolists | orderBy: id">
+    <li>
+      <p><a href="/todolists/{{list.id}}">{{list.name}}</a></p>
+      <p>{{list.created_at}}</p>
+      <button ng-click="deletetodolist(list)">delete</button>
+    </li>
+  </ul>
+
+</div>

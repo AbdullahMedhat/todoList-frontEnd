@@ -1,0 +1,30 @@
+<div ng-controller="signoutCtrl">
+  <button ng-click="handleLogoutBtnClick()">Sign Out</button>
+</div>
+
+<div ng-controller='todosCtrl'>
+  <h1>ToDo</h1>
+  <ul ng-repeat = "todo in todos | orderBy: id">
+    <li>
+      <form ng-show="editing" ng-submit="editing=false; edit(todo)">
+        <input type="text" ng-model= "todo.content" >
+      </form>
+
+      <input type="checkbox" class="donecheck" ng-change="done(todo)" ng-model="todo.done"/>
+      <span ng-hide="editing" ng-class ="donestatus(todo)">{{ todo.title }}</span>
+      <button ng-click="done(todo)">cross it off!</button>
+      <button ng-hide="editing" ng-click="editing = true">edit</button>
+      <button ng-click="deletetodo(todo)">delete</button>
+    </li>
+  </ul>
+
+  <ul class="add-todo">
+    <li>
+      <form ng-submit = "create()">
+	      <input type="text" class="addtxt" placeholder="New todo" ng-model = "todo.content" />
+	      <button type="submit">Add todo</button>
+	    </form>
+    </li>
+  </ul>
+
+</div>

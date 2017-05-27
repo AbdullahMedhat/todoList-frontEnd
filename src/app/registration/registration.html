@@ -1,0 +1,32 @@
+<div ng-controller='registrationCtrl'>
+  <form ng-submit="submitRegistration(registrationForm)" role="form" ng-init="registrationForm = {}">
+    
+    <div>
+      <label>First name</label>
+      <input type="text" name="firstName" ng-model="registrationForm.firstName" required="required" />
+
+      <label>Middle name</label>
+      <input type="text" name="middleName" ng-model="registrationForm.middleName" required="required" />
+
+      <label>Last name</label>
+      <input type="text" name="lastName" ng-model="registrationForm.lastName" required="required" />
+    </div>
+
+    <div>
+      <label>email</label>
+      <input type="email" name="email" ng-model="registrationForm.email" required="required" />
+    </div>
+
+    <div class="form-group">
+      <label>password</label>
+      <input type="password" name="password" ng-model="registrationForm.password" required="required" />
+    </div>
+
+    <div>
+      <label>password confirmation</label>
+      <input type="password" name="password_confirmation" ng-model="registrationForm.password_confirmation" required="required" />
+    </div>
+
+    <button type="submit">Register</button>
+  </form>
+</div>
